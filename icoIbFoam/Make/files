@@ -1,5 +1,0 @@
-leastSquaresSkewCorrected/leastSquaresSkewCorrected.C
-
-icoIbFoam.C
-
-EXE = $(FOAM_USER_APPBIN)/icoIbFoam

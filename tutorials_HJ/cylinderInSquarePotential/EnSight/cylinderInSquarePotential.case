@@ -1,0 +1,19 @@
+FORMAT
+type: ensight gold
+
+GEOMETRY
+model:        1     cylinderInSquarePotential.000.mesh
+
+VARIABLE
+scalar per element:            1       cellIbMaskExt   cylinderInSquarePotential.***.cellIbMaskExt
+scalar per element:            1       cellIbMask      cylinderInSquarePotential.***.cellIbMask
+scalar per element:            1       p               cylinderInSquarePotential.***.p
+vector per element:            1       U               cylinderInSquarePotential.***.U
+
+TIME
+time set:                      1
+number of steps:               1
+filename start number:         0
+filename increment:            1
+time values:
+0.00000e+00  

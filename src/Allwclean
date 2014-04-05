@@ -1,0 +1,16 @@
+#!/bin/sh
+set -x
+
+wclean surfaceNormal
+wclean surfaceInvertNormal
+
+wclean immersedBoundary
+wclean immersedBoundaryForce
+
+wclean makeTriSurfaceMesh
+wclean refineImmersedBoundaryMesh
+
+wclean potentialIbFoam
+wclean icoIbFoam
+wclean interIbFoam
+wclean simpleIbFoam

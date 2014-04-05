@@ -1,1 +1,0 @@
-../skewCorrectedSnGrad/skewCorrectedSnGrad.C

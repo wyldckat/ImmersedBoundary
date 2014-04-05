@@ -22,26 +22,26 @@ ddtSchemes
 gradSchemes
 {
     default         leastSquares;
-    grad(p)         Gauss leastSquaresSkewCorrected linear;
+    grad(p)         Gauss skewCorrected linear;
 }
 
 divSchemes
 {
     default         none;
-    div(phi,U)      Gauss leastSquaresSkewCorrected GammaVDC 0.5;
+    div(phi,U)      Gauss GammaVDC 0.5;
 }
 
 laplacianSchemes
 {
     default         none;
     laplacian(nu,U) Gauss linear corrected;
-    laplacian((sGamma*interpolate((1|A(U)))),p) Gauss linear corrected;
+    laplacian((1|A(U)),p) Gauss linear corrected;
 }
 
 interpolationSchemes
 {
     default none;
-    interpolate(U) leastSquaresSkewCorrected linear;
+    interpolate(U) skewCorrected linear;
     interpolate((1|A(U))) linear;
     interpolate(p) linear;
 }

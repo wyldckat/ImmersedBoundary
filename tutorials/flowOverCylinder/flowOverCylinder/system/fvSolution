@@ -52,7 +52,7 @@ solvers
     };
 }
 
-PISO
+PIMPLE
 {
     nOuterCorrectors 1;
     nCorrectors     3;

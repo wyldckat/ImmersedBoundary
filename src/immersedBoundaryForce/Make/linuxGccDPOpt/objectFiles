@@ -1,0 +1,3 @@
+OBJECTS = \
+$(OBJECTS_DIR)/immersedBoundaryForces.o\
+$(OBJECTS_DIR)/immersedBoundaryForcesFunctionObject.o

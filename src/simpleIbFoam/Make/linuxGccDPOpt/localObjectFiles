@@ -1,0 +1,4 @@
+LOCAL_OBJECTS = \
+immersedBoundaryWallFunctionFvPatchFields.o\
+immersedBoundaryEpsilonWallFunctionFvPatchScalarField.o\
+simpleIbFoam.o

@@ -29,7 +29,7 @@ deltaT          0.025;
 // writeControl    timeStep;
 writeControl runTime;
 
-writeInterval 2;
+writeInterval 0.1;
 
 purgeWrite      0;
 
@@ -49,16 +49,31 @@ adjustTimeStep  no;
 
 maxCo           0.2;
 
-functions
-{
-    immersedBoundaryForce
-    {
-        type               immersedBoundaryForce;
-        functionObjectLibs ("libimmersedBoundaryForceFunctionObject.so");
-        Aref 0.05;
-        Uref 1;
-    }
-}
+// libs ( "libimmersedBoundary.so");
+
+// functions
+// (
+//     forces
+//     {
+//         type               immersedBoundaryForces;
+//         functionObjectLibs ("libimmersedBoundaryForceFunctionObject.so");
+
+//         outputControl timeStep;
+//         outputInterval 1;
+//         patches ( ibCylinder );
+
+//         pName       p;
+//         UName       U;
+//         rhoName     rhoInf;
+//         rhoInf      1;
+
+//         log         true;
+//         CofR        ( 0 0 0 );
+
+//         Aref 0.05;
+//         Uref 1;
+//     }
+// );
 
 
 // ************************************************************************* //

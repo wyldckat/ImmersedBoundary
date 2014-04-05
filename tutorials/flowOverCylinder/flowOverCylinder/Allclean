@@ -4,5 +4,10 @@
 . $WM_PROJECT_DIR/bin/tools/CleanFunctions
 
 cleanCase
-rm -r 0/polyMesh
-rm -r ibForce
+(cd refineCylinderMesh; cleanApplication)
+
+\rm -rf 0
+cp -r save 0
+
+rm -rf constant/polyMesh/
+mkdir constant/polyMesh

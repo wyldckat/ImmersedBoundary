@@ -1,0 +1,10 @@
+OBJECTS = \
+$(OBJECTS_DIR)/immersedBoundaryPolyPatch.o\
+$(OBJECTS_DIR)/immersedBoundaryPointPatch.o\
+$(OBJECTS_DIR)/immersedBoundaryFvPatch.o\
+$(OBJECTS_DIR)/immersedBoundaryFvPatchLeastSquaresFit.o\
+$(OBJECTS_DIR)/immersedBoundaryFvPatchTriAddressing.o\
+$(OBJECTS_DIR)/immersedBoundaryFvPatchFields.o\
+$(OBJECTS_DIR)/immersedBoundaryFvsPatchFields.o\
+$(OBJECTS_DIR)/immersedBoundaryAdjustPhi.o\
+$(OBJECTS_DIR)/refineImmersedBoundaryMesh.o

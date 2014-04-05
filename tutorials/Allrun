@@ -1,0 +1,12 @@
+#!/bin/sh
+
+( cd cavity ; ./Allrun )
+
+( cd flowOverCylinder ; ./Allrun )
+
+( cd pitzDailyLaminar ; ./Allrun )
+
+( cd damBreakWithCylinder ; ./Allrun )
+
+
+( cd flowOverSphere ; ./Allrun )

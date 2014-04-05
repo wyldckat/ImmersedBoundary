@@ -1,0 +1,8 @@
+wallFunctions/immersedBoundaryWallFunctions/immersedBoundaryWallFunctionFvPatchFields.C
+
+wallFunctions/immersedBoundaryEpsilonWallFunctions/immersedBoundaryEpsilonWallFunctionFvPatchScalarField.C
+
+simpleIbFoam.C 
+
+EXE = $(FOAM_USER_APPBIN)/simpleIbFoam
+

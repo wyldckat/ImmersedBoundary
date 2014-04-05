@@ -1,0 +1,4 @@
+SOURCE = \
+wallFunctions/immersedBoundaryWallFunctions/immersedBoundaryWallFunctionFvPatchFields.C\
+wallFunctions/immersedBoundaryEpsilonWallFunctions/immersedBoundaryEpsilonWallFunctionFvPatchScalarField.C\
+simpleIbFoam.C

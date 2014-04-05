@@ -1,0 +1,14 @@
+immersedBoundaryPolyPatch/immersedBoundaryPolyPatch.C
+immersedBoundaryPointPatch/immersedBoundaryPointPatch.C
+immersedBoundaryFvPatch/immersedBoundaryFvPatch.C
+immersedBoundaryFvPatch/immersedBoundaryFvPatchLeastSquaresFit.C
+immersedBoundaryFvPatch/immersedBoundaryFvPatchTriAddressing.C
+
+immersedBoundaryFvPatchField/immersedBoundaryFvPatchFields.C
+immersedBoundaryFvsPatchField/immersedBoundaryFvsPatchFields.C
+
+immersedBoundaryAdjustPhi/immersedBoundaryAdjustPhi.C
+
+refineImmersedBoundaryMesh/refineImmersedBoundaryMesh.C
+
+LIB = $(FOAM_USER_LIBBIN)/libimmersedBoundary

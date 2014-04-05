@@ -1,1 +1,0 @@
-../immersedBoundaryForceFunctionObject.C

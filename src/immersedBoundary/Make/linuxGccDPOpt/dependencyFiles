@@ -1,0 +1,10 @@
+DEPENDENCIES = \
+immersedBoundaryPolyPatch/immersedBoundaryPolyPatch.dep\
+immersedBoundaryPointPatch/immersedBoundaryPointPatch.dep\
+immersedBoundaryFvPatch/immersedBoundaryFvPatch.dep\
+immersedBoundaryFvPatch/immersedBoundaryFvPatchLeastSquaresFit.dep\
+immersedBoundaryFvPatch/immersedBoundaryFvPatchTriAddressing.dep\
+immersedBoundaryFvPatchField/immersedBoundaryFvPatchFields.dep\
+immersedBoundaryFvsPatchField/immersedBoundaryFvsPatchFields.dep\
+immersedBoundaryAdjustPhi/immersedBoundaryAdjustPhi.dep\
+refineImmersedBoundaryMesh/refineImmersedBoundaryMesh.dep

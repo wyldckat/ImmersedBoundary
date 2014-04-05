@@ -1,0 +1,23 @@
+#!/bin/sh
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+# Get application name
+application="icoIbFoam"
+
+compileApplication refineSphereMesh
+
+\rm -rf 0
+mkdir 0
+\cp -f blockMeshDict constant/polyMesh/blockMeshDict
+runApplication blockMesh
+runApplication refineSphereMesh
+\rm -rf constant/polyMesh
+\mv 0/polyMesh constant/polyMesh
+\cp -f boundary constant/polyMesh/boundary
+
+\rm -rf 0
+\cp -r save 0
+
+#runApplication potentialIbFoam
+#runApplication $application

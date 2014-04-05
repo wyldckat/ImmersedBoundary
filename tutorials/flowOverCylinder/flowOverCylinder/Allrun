@@ -5,13 +5,28 @@
 # Get application name
 application="icoIbFoam"
 
+compileApplication refineCylinderMesh
+
+\rm -rf 0
+mkdir 0
+
+\cp -f blockMeshDict constant/polyMesh/blockMeshDict
 runApplication blockMesh
+\cp -f boundary constant/polyMesh/boundary
 
 runApplication refineCylinderMesh
 
 runApplication refineImmersedBoundaryMesh
-
 rm log.refineImmersedBoundaryMesh
+
 runApplication refineImmersedBoundaryMesh
 
+\rm -rf constant/polyMesh
+\mv 0/polyMesh constant/polyMesh
+
+
+\rm -rf 0
+\cp -r save 0
+
+#runApplication potentialIbFoam
 runApplication $application

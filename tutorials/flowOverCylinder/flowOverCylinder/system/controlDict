@@ -22,7 +22,7 @@ startTime       0;
 
 stopAt          endTime;
 
-endTime         0.1;
+endTime         1;
 
 deltaT          0.02;
 
@@ -49,16 +49,31 @@ adjustTimeStep  no;
 
 maxCo           0.2;
 
+libs ( "libimmersedBoundary.so");
+
 functions
-{
-    immersedBoundaryForce
+(
+    forces
     {
-        type               immersedBoundaryForce;
+        type               immersedBoundaryForces;
         functionObjectLibs ("libimmersedBoundaryForceFunctionObject.so");
-        Aref 0.3;
+
+        outputControl timeStep;
+        outputInterval 1;
+        patches ( ibCylinder );
+
+        pName       p;
+        UName       U;
+        rhoName     rhoInf;
+        rhoInf      1;
+
+        log         true;
+        CofR        ( 0 0 0 );
+
+        Aref 0.05;
         Uref 1;
     }
-}
+);
 
 
 // ************************************************************************* //

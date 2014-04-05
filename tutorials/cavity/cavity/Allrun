@@ -5,6 +5,10 @@
 # Get application name
 application="icoIbFoam"
 
+\cp -f blockMeshDict constant/polyMesh/blockMeshDict
+
 runApplication blockMesh
+
+\cp -f boundary constant/polyMesh/boundary
 
 runApplication $application

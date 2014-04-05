@@ -1,0 +1,3 @@
+include wallFunctions/immersedBoundaryWallFunctions/immersedBoundaryWallFunctionFvPatchFields.dep
+include wallFunctions/immersedBoundaryEpsilonWallFunctions/immersedBoundaryEpsilonWallFunctionFvPatchScalarField.dep
+include simpleIbFoam.dep

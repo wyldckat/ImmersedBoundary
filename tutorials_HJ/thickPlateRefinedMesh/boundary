@@ -1,0 +1,60 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM Extend Project: Open source CFD        |
+|  \\    /   O peration     | Version:  1.6-ext                               |
+|   \\  /    A nd           | Web:      www.extend-project.de                 |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       polyBoundaryMesh;
+    location    "0/polyMesh";
+    object      boundary;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+6
+(
+    ibThickPlate
+    {
+        type           immersedBoundary;
+        nFaces          0;
+        startFace       21228;
+
+        internalFlow    no;
+    }
+    top
+    {
+        type            patch;
+        nFaces          40;
+        startFace       21228;
+    }
+    in
+    {
+        type            patch;
+        nFaces          40;
+        startFace       21268;
+    }
+    out
+    {
+        type            patch;
+        nFaces          40;
+        startFace       21308;
+    }
+    bottom
+    {
+        type            patch;
+        nFaces          40;
+        startFace       21348;
+    }
+    frontAndBack
+    {
+        type            empty;
+        nFaces          21080;
+        startFace       21388;
+    }
+)
+
+// ************************************************************************* //

@@ -1,0 +1,4 @@
+DEPENDENCIES = \
+wallFunctions/immersedBoundaryWallFunctions/immersedBoundaryWallFunctionFvPatchFields.dep\
+wallFunctions/immersedBoundaryEpsilonWallFunctions/immersedBoundaryEpsilonWallFunctionFvPatchScalarField.dep\
+simpleIbFoam.dep

@@ -16,50 +16,81 @@ FoamFile
 
 solvers
 {
-//     p
-//     {
-//         solver           PCG;
-//         preconditioner   DIC;
-
-//         minIter          1;
-//         maxIter          1000;
-//         tolerance        1e-08;
-//         relTol           0;
-//     };
-
     p
     {
-        solver          GAMG;
-        tolerance       1e-08;
-        relTol          0;
-        minIter 1;
-        smoother        GaussSeidel;
-        cacheAgglomeration true;
-        nCellsInCoarsestLevel 10;
-        agglomerator    faceAreaPair;
-        mergeLevels     1;
+        solver           PCG;
+        preconditioner   DIC;
+
+        minIter          1;
+        maxIter          1000;
+        tolerance        1e-08;
+        relTol           0;
     }
+
+//     p
+//     {
+//         solver          amgSolver;
+//         cycle           W-cycle;
+//         policy          SAMG;
+//         nPreSweeps      0;
+//         nPostSweeps     2;
+//         groupSize       4;
+//         minCoarseEqns   50;
+//         nMaxLevels      100;
+//         scale           on;
+//         smoother        ILU;
+
+//         minIter    1;
+//         maxIter    200;
+//         tolerance  1e-7;
+//         relTol     0.0;
+//     }
+
+//     p
+//     {
+//         solver          GAMG;
+//         tolerance       1e-08;
+//         relTol          0;
+//         minIter 1;
+//         smoother        GaussSeidel;
+//         cacheAgglomeration true;
+//         nCellsInCoarsestLevel 10;
+//         agglomerator    faceAreaPair;
+//         mergeLevels     1;
+//     }
 
     U
     {
         solver           PBiCG;
         preconditioner   DILU;
 
+//         solver           PCG;
+//         preconditioner   DIC;
+
         minIter          1;
         maxIter          1000;
         tolerance        1e-08;
         relTol           0;
-    };
+    }
 }
 
-PISO
+SIMPLE
 {
-    nOuterCorrectors 1;
-    nCorrectors     3;
-    nNonOrthogonalCorrectors 0;
-    
+    nNonOrthogonalCorrectors 5;
+
     pRefPoint (0 -0.45 0.05);
     pRefValue 0;
 }
+
+PIMPLE
+{
+    nOuterCorrectors 1;
+    nCorrectors     2;
+    nNonOrthogonalCorrectors 0;
+
+    pRefPoint (0 -0.45 0.05);
+    pRefValue 0;
+}
+
 
 // ************************************************************************* //
