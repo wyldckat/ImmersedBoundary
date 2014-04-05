@@ -5,7 +5,7 @@ This original source code for this toolkit has been retrieved from here: http://
 
 This repository merely aims to make it easier to download and create forks of this source code.
 
-Installation instructions available at openfoamwiki.net: TODO
+Installation instructions available at openfoamwiki.net: http://openfoamwiki.net/index.php/Extend-bazaar/Toolkits/ImmersedBoundary
 
 Target OpenFOAM versions/variants:
  * `master` branch targets the variant OpenFOAM 1.6-ext
