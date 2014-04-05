@@ -28,7 +28,7 @@ Description
 \*---------------------------------------------------------------------------*/
 
 #include "argList.H"
-#include "triSurface.H"
+#include "triSurfaceHandler.H"
 #include "IFstream.H"
 
 using namespace Foam;
@@ -48,12 +48,12 @@ int main(int argc, char *argv[])
 
     Info<< "Reading surf from " << surfFileName << " ..." << endl;
 
-    triSurface ts(surfFileName);
+    triSurfaceHandler ts(surfFileName);
 
     fileName normalFileName(surfFileName.lessExt() + "Normals");
 
     Info<< "Writing normals to file " << normalFileName << endl;
-    triSurface::writeVTKNormals
+    triSurfaceHandler::writeVTKNormals
     (
         normalFileName,
         ts,
