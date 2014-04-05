@@ -1,0 +1,18 @@
+#!/bin/sh
+set -x
+
+wmake libso immersedBoundary
+
+wmake libso immersedBoundaryForce
+
+wmake icoIbFoam
+
+wmake makeTriSurfaceMesh
+
+wmake refineImmersedBoundaryMesh
+
+wmake tutorials/flowOverSphere/refineSphereMesh
+
+wmake tutorials/flowOverCylinder/refineCylinderMesh
+
+wmake tutorials/flowOverThickPlate/refineThickPlateMesh

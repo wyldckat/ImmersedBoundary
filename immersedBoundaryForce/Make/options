@@ -1,0 +1,12 @@
+EXE_INC = \
+    -I$(LIB_SRC)/finiteVolume/lnInclude \
+    $(WM_DECOMP_INC) \
+    -I$(LIB_SRC)/tetDecompositionFiniteElement/lnInclude \
+    -I$(LIB_SRC)/tetDecompositionMotionSolver/lnInclude
+
+LIB_LIBS = \
+    -lmeshTools \
+    -lfiniteVolume \
+    -ldynamicFvMesh \
+    -ldynamicMesh \
+    $(WM_DECOMP_LIBS)

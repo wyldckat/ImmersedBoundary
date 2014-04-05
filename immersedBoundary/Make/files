@@ -1,0 +1,7 @@
+immersedBoundary.C
+immersedBoundaryFlux.C
+immersedBoundaryLeastSquaresFit.C
+immersedBoundaryWallDistance.C
+immersedBoundaryMeshRefinement.C
+
+LIB = $(FOAM_USER_LIBBIN)/libimmersedBoundary

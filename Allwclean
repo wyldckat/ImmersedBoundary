@@ -1,0 +1,18 @@
+#!/bin/sh
+set -x
+
+wclean immersedBoundary
+
+wclean immersedBoundaryForce
+
+wclean icoIbFoam
+
+wclean makeTriSurfaceMesh
+
+wclean refineImmersedBoundaryMesh
+
+wclean tutorials/flowOverSphere/refineSphereMesh
+
+wclean tutorials/flowOverCylinder/refineCylinderMesh
+
+wclean tutorials/flowOverThickPlate/refineThickPlateMesh
