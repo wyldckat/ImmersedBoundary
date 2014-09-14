@@ -18,8 +18,6 @@
         )
     );
 
-    alpha1Eqn.boundaryManipulate(alpha1.boundaryField());
-
     alpha1Eqn.solve();
 
     Info<< "Liquid phase volume fraction = "

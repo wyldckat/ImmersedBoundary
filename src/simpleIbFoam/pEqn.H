@@ -23,8 +23,6 @@
 
         pEqn.setReference(pRefCell, pRefValue);
 
-        pEqn.boundaryManipulate(p.boundaryField());
-
         // Retain the residual from the first iteration
         if (nonOrth == 0)
         {

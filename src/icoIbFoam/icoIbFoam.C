@@ -71,7 +71,6 @@ int main(int argc, char *argv[])
               - fvm::laplacian(nu, U)
             );
 
-            UEqn.boundaryManipulate(U.boundaryField());
             solve(UEqn == -cellIbMask*fvc::grad(p));
 
             // --- PISO loop
@@ -97,7 +96,6 @@ int main(int argc, char *argv[])
                     );
 
                     pEqn.setReference(pRefCell, pRefValue);
-                    pEqn.boundaryManipulate(p.boundaryField());
                     pEqn.solve();
 
                     if (nonOrth == nNonOrthCorr)

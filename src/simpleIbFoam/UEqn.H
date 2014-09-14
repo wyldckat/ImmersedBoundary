@@ -8,8 +8,6 @@
 
     UEqn().relax();
 
-    UEqn().boundaryManipulate(U.boundaryField());
-
     eqnResidual = solve
     (
         UEqn() == -cellIbMask*fvc::grad(p)

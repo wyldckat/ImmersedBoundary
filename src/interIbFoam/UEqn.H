@@ -18,8 +18,6 @@
 
     if (momentumPredictor)
     {
-        UEqn.boundaryManipulate(U.boundaryField());
-
         solve
         (
             UEqn
