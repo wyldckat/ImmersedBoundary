@@ -7,17 +7,18 @@ application="icoIbFoam"
 
 compileApplication refineSphereMesh
 
-\rm -rf 0
+rm -rf 0
 mkdir 0
-\cp -f blockMeshDict constant/polyMesh/blockMeshDict
+mkdir constant/polyMesh
+cp -f blockMeshDict constant/polyMesh/blockMeshDict
 runApplication blockMesh
 runApplication refineSphereMesh
-\rm -rf constant/polyMesh
-\mv 0/polyMesh constant/polyMesh
-\cp -f boundary constant/polyMesh/boundary
+rm -rf constant/polyMesh
+mv 0/polyMesh constant/polyMesh
+cp -f boundary constant/polyMesh/boundary
 
-\rm -rf 0
-\cp -r save 0
+rm -rf 0
+cp -r save 0
 
 #runApplication potentialIbFoam
 #runApplication $application

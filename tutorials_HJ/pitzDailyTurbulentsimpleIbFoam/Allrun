@@ -5,12 +5,13 @@
 # Get application name
 application="simpleIbFoam"
 
-\rm -rf 0
-\cp -r save 0
+rm -rf 0
+cp -r save 0
 
-\cp -f blockMeshDict constant/polyMesh/blockMeshDict
+mkdir constant/polyMesh
+cp -f blockMeshDict constant/polyMesh/blockMeshDict
 runApplication blockMesh
-\cp -f boundary constant/polyMesh/boundary
+cp -f boundary constant/polyMesh/boundary
 
-#runApplication potentialIbFoam
-#runApplication $application
+runApplication potentialIbFoam
+runApplication $application

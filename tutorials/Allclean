@@ -1,17 +1,12 @@
 #!/bin/sh
 
-( cd cylinderInSquarePotential ; ./Allclean )
-( cd cylinderInSquareLaplace ; ./Allclean )
+( cd cavity ; foamCleanTutorials )
 
-( cd cylinderInChannelPotential ; ./Allclean )
-( cd cylinderInChannelScalarTransport ; ./Allclean )
-( cd cylinderInChannelicoIbFoam ; ./Allclean )
-( cd cylinderInChannelFineicoIbFoam ; ./Allclean )
+( cd flowOverCylinder ; foamCleanTutorials )
 
-( cd thickPlateRefinedMesh ; ./Allclean )
-( cd sphereInChannel ; ./Allclean )
+( cd pitzDailyLaminar ; ./Allclean )
 
-( cd cylBumpinterIbFoam ; ./Allclean )
+( cd damBreakWithCylinder ; ./Allclean )
 
-( cd pitzDailyLaminaricoIbFoam ; ./Allclean )
-( cd simpleSilencerLaminaricoIbFoam ; ./Allclean )
+
+( cd flowOverSphere ; ./Allclean )

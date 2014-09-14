@@ -5,13 +5,14 @@
 # Get application name
 application="interIbFoam"
 
-\rm -rf 0
+rm -rf 0
 cp -r save 0
-\cp -f blockMeshDict constant/polyMesh/blockMeshDict
+mkdir constant/polyMesh
+cp -f blockMeshDict constant/polyMesh/blockMeshDict
 runApplication blockMesh
-\cp -f boundary constant/polyMesh/boundary
+cp -f boundary constant/polyMesh/boundary
 
-\cp -f 0/alpha1.org 0/alpha1
+cp -f 0/alpha1.org 0/alpha1
 runApplication setFields
 
 runApplication $application

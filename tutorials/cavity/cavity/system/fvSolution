@@ -31,7 +31,7 @@ solvers
 //     {
 //         solver          amgSolver;
 //         cycle           W-cycle;
-//         policy          SAMG;
+//         policy          PAMG;
 //         nPreSweeps      0;
 //         nPostSweeps     2;
 //         groupSize       4;
