@@ -27,8 +27,8 @@ License
 #ifndef immersedBoundaryFvPatchFields_H
 #define immersedBoundaryFvPatchFields_H
 
-#include "immersedBoundaryFvPatchField.H"
 #include "fieldTypes.H"
+#include "immersedBoundaryFvPatchField.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

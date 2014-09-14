@@ -26,8 +26,8 @@ License
 
 #include "immersedBoundaryForces.H"
 #include "immersedBoundaryFvPatch.H"
-#include "immersedBoundaryFvPatchFields.H"
 #include "volFields.H"
+#include "immersedBoundaryFvPatchFields.H"
 #include "surfaceFields.H"
 #include "dictionary.H"
 #include "Time.H"
