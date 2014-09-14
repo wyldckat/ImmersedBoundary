@@ -9,6 +9,7 @@ Installation instructions available at openfoamwiki.net: http://openfoamwiki.net
 
 Target OpenFOAM versions/variants:
  * `master` branch targets the variant OpenFOAM 1.6-ext
+ * `fe31` branch targets the variant foam-extend 3.1
 
 
 Original authors
