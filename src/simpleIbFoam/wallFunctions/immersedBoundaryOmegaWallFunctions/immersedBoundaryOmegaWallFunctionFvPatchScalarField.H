@@ -52,7 +52,7 @@ SourceFiles
 #ifndef immersedBoundaryOmegaWallFunctionFvPatchScalarField_H
 #define immersedBoundaryOmegaWallFunctionFvPatchScalarField_H
 
-#include "immersedBondaryFvPatchField.H"
+#include "immersedBoundaryFvPatchFields.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
@@ -69,7 +69,7 @@ namespace RASModels
 
 class immersedBoundaryOmegaWallFunctionFvPatchScalarField
 :
-    public immersedBondaryFvPatchField<scalar>
+    public immersedBoundaryFvPatchScalarField
 {
     // Private data
 

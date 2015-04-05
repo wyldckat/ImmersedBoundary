@@ -24,11 +24,11 @@ License
 
 \*---------------------------------------------------------------------------*/
 
-#include "immersedBoundaryOmegaWallFunctionFvPatchScalarField.H"
-#include "RASModel.H"
 #include "fvPatchFieldMapper.H"
+#include "RASModel.H"
 #include "volFields.H"
 #include "addToRunTimeSelectionTable.H"
+#include "immersedBoundaryOmegaWallFunctionFvPatchScalarField.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
@@ -51,7 +51,7 @@ immersedBoundaryOmegaWallFunctionFvPatchScalarField
     const DimensionedField<scalar, volMesh>& iF
 )
 :
-    immersedBondaryFvPatchField<scalar>(p, iF),
+    immersedBoundaryFvPatchScalarField(p, iF),
     UName_("U"),
     kName_("k"),
     GName_("RASModel::G"),
@@ -61,9 +61,7 @@ immersedBoundaryOmegaWallFunctionFvPatchScalarField
     kappa_(0.41),
     E_(9.8),
     beta1_(0.075)
-{
-    checkType();
-}
+{}
 
 
 immersedBoundaryOmegaWallFunctionFvPatchScalarField::
@@ -75,7 +73,7 @@ immersedBoundaryOmegaWallFunctionFvPatchScalarField
     const fvPatchFieldMapper& mapper
 )
 :
-    immersedBondaryFvPatchField<scalar>(ptf, p, iF, mapper),
+    immersedBoundaryFvPatchScalarField(ptf, p, iF, mapper),
     UName_(ptf.UName_),
     kName_(ptf.kName_),
     GName_(ptf.GName_),
@@ -85,9 +83,7 @@ immersedBoundaryOmegaWallFunctionFvPatchScalarField
     kappa_(ptf.kappa_),
     E_(ptf.E_),
     beta1_(ptf.beta1_)
-{
-    checkType();
-}
+{}
 
 
 immersedBoundaryOmegaWallFunctionFvPatchScalarField::
@@ -98,7 +94,7 @@ immersedBoundaryOmegaWallFunctionFvPatchScalarField
     const dictionary& dict
 )
 :
-    immersedBondaryFvPatchField<scalar>(p, iF, dict),
+    immersedBoundaryFvPatchScalarField(p, iF, dict),
     UName_(dict.lookupOrDefault<word>("U", "U")),
     kName_(dict.lookupOrDefault<word>("k", "k")),
     GName_(dict.lookupOrDefault<word>("G", "RASModel::G")),
@@ -108,9 +104,7 @@ immersedBoundaryOmegaWallFunctionFvPatchScalarField
     kappa_(dict.lookupOrDefault<scalar>("kappa", 0.41)),
     E_(dict.lookupOrDefault<scalar>("E", 9.8)),
     beta1_(dict.lookupOrDefault<scalar>("beta1", 0.075))
-{
-    checkType();
-}
+{}
 
 
 immersedBoundaryOmegaWallFunctionFvPatchScalarField::
@@ -119,7 +113,7 @@ immersedBoundaryOmegaWallFunctionFvPatchScalarField
     const immersedBoundaryOmegaWallFunctionFvPatchScalarField& owfpsf
 )
 :
-    immersedBondaryFvPatchField<scalar>(owfpsf),
+    immersedBoundaryFvPatchScalarField(owfpsf),
     UName_(owfpsf.UName_),
     kName_(owfpsf.kName_),
     GName_(owfpsf.GName_),
@@ -129,9 +123,7 @@ immersedBoundaryOmegaWallFunctionFvPatchScalarField
     kappa_(owfpsf.kappa_),
     E_(owfpsf.E_),
     beta1_(owfpsf.beta1_)
-{
-    checkType();
-}
+{}
 
 
 immersedBoundaryOmegaWallFunctionFvPatchScalarField::immersedBoundaryOmegaWallFunctionFvPatchScalarField
@@ -140,7 +132,7 @@ immersedBoundaryOmegaWallFunctionFvPatchScalarField::immersedBoundaryOmegaWallFu
     const DimensionedField<scalar, volMesh>& iF
 )
 :
-    immersedBondaryFvPatchField<scalar>(owfpsf, iF),
+    immersedBoundaryFvPatchScalarField(owfpsf, iF),
     UName_(owfpsf.UName_),
     kName_(owfpsf.kName_),
     GName_(owfpsf.GName_),
@@ -150,9 +142,7 @@ immersedBoundaryOmegaWallFunctionFvPatchScalarField::immersedBoundaryOmegaWallFu
     kappa_(owfpsf.kappa_),
     E_(owfpsf.E_),
     beta1_(owfpsf.beta1_)
-{
-    checkType();
-}
+{}
 
 
 // * * * * * * * * * * * * * * * Member Functions  * * * * * * * * * * * * * //
@@ -170,10 +160,10 @@ void immersedBoundaryOmegaWallFunctionFvPatchScalarField::updateCoeffs()
     {
         InfoIn("void immersedBoundaryOmegaWallFunctionFvPatchScalarField::updateCoeffs()")
             << "Cannot access " << GName_ << " field.  for patch "
-            << patch().name() << ".  Evaluating as zeroGradient"
+            << patch().name() << ".  Evaluating as regular immersed boundary"
             << endl;
 
-        zeroGradientFvPatchScalarField::evaluate();
+        immersedBoundaryFvPatchScalarField::evaluate();
 
         return;
     }
@@ -240,13 +230,13 @@ void immersedBoundaryOmegaWallFunctionFvPatchScalarField::updateCoeffs()
 
     // TODO: perform averaging for cells sharing more than one boundary face
 
-    immersedBondaryFvPatchField<scalar>::updateCoeffs();
+    immersedBoundaryFvPatchScalarField::updateCoeffs();
 }
 
 
 void immersedBoundaryOmegaWallFunctionFvPatchScalarField::write(Ostream& os) const
 {
-    immersedBondaryFvPatchField<scalar>::write(os);
+    immersedBoundaryFvPatchScalarField::write(os);
     writeEntryIfDifferent<word>(os, "U", "U", UName_);
     writeEntryIfDifferent<word>(os, "k", "k", kName_);
     writeEntryIfDifferent<word>(os, "G", "RASModel::G", GName_);
