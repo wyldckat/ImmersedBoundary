@@ -1,7 +1,7 @@
 ImmersedBoundary
 ================
 
-This original source code for this toolkit has been retrieved from here: http://www.openfoamworkshop.org/2012/downloads/Training/ZeljkoTukovic/ZeljkoTukovic-ImmersedBoundaryMaterial.tgz
+This original source code for this toolkit has been retrieved from here: http://sourceforge.net/projects/openfoam-extend/files/OpenFOAM_Workshops/OFW7_2012_Darmstadt/Training/ZeljkoTukovic/ZeljkoTukovic-ImmersedBoundaryMaterial.tgz
 
 This repository merely aims to make it easier to download and create forks of this source code.
 
@@ -15,7 +15,7 @@ Target OpenFOAM versions/variants:
 Original authors
 ================
 
-Zeljko Tukovic and Hrvoje Jasak, according to the presentation available here: http://www.openfoamworkshop.org/2012/downloads/Training/ZeljkoTukovic/ZeljkoTukovic-ImmersedBoundarySlides.tgz
+Zeljko Tukovic and Hrvoje Jasak, according to the presentation available here: http://sourceforge.net/projects/openfoam-extend/files/OpenFOAM_Workshops/OFW7_2012_Darmstadt/Training/ZeljkoTukovic/ZeljkoTukovic-ImmersedBoundarySlides.tgz
 
 
 License
