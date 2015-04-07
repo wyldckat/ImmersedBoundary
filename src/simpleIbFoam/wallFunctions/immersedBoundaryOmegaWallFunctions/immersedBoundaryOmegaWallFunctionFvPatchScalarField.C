@@ -126,7 +126,8 @@ immersedBoundaryOmegaWallFunctionFvPatchScalarField
 {}
 
 
-immersedBoundaryOmegaWallFunctionFvPatchScalarField::immersedBoundaryOmegaWallFunctionFvPatchScalarField
+immersedBoundaryOmegaWallFunctionFvPatchScalarField::
+immersedBoundaryOmegaWallFunctionFvPatchScalarField
 (
     const immersedBoundaryOmegaWallFunctionFvPatchScalarField& owfpsf,
     const DimensionedField<scalar, volMesh>& iF
@@ -154,12 +155,17 @@ void immersedBoundaryOmegaWallFunctionFvPatchScalarField::updateCoeffs()
         return;
     }
 
+    Info<< "Evaluating wall functions" << nl << endl;
+
     // If G field is not present, execute zero gradient evaluation
     // HJ, 20/Mar/2011
     if (!db().foundObject<volScalarField>(GName_))
     {
-        InfoIn("void immersedBoundaryOmegaWallFunctionFvPatchScalarField::updateCoeffs()")
-            << "Cannot access " << GName_ << " field.  for patch "
+        InfoIn
+        (
+            "void immersedBoundaryOmegaWallFunctionFvPatchScalarField::"
+            "updateCoeffs()"
+        )   << "Cannot access " << GName_ << " field.  for patch "
             << patch().name() << ".  Evaluating as regular immersed boundary"
             << endl;
 
@@ -177,20 +183,22 @@ void immersedBoundaryOmegaWallFunctionFvPatchScalarField::updateCoeffs()
     volScalarField& G = const_cast<volScalarField&>
         (db().lookupObject<volScalarField>(GName_));
 
-    // Note: omega is now a refValue and set in immersedBondaryFvPatchField
+    // Note: omega is now a refValue and set in
+    // immersedBoundaryFvPatchField
     // HJ, 3/Aug/2011
     scalarField& omega = refValue();
 
-    const scalarField& k = db().lookupObject<volScalarField>(kName_);
+    const volScalarField& k = db().lookupObject<volScalarField>(kName_);
 
     const scalarField& nuw =
-        lookupPatchField<volScalarField, scalar>(nuName_);
+        patch().lookupPatchField<volScalarField, scalar>(nuName_);
 
     const scalarField& nutw =
-        lookupPatchField<volScalarField, scalar>(nutName_);
+        patch().lookupPatchField<volScalarField, scalar>(nutName_);
 
     const fvPatchVectorField& Uw =
-        lookupPatchField<volVectorField, vector>(UName_);
+        patch().lookupPatchField<volVectorField, vector>(UName_);
+    /*
 
     vectorField n = patch().nf();
 
@@ -229,8 +237,18 @@ void immersedBoundaryOmegaWallFunctionFvPatchScalarField::updateCoeffs()
     }
 
     // TODO: perform averaging for cells sharing more than one boundary face
+    */
 
     immersedBoundaryFvPatchScalarField::updateCoeffs();
+}
+
+
+void immersedBoundaryOmegaWallFunctionFvPatchScalarField::evaluate
+(
+    const Pstream::commsTypes commsType
+)
+{
+    immersedBoundaryFvPatchScalarField::evaluate(commsType);
 }
 
 
