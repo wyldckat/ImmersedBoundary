@@ -3,7 +3,7 @@ ImmersedBoundary
 
 This original source code for this toolkit has been retrieved from here: http://sourceforge.net/projects/openfoam-extend/files/OpenFOAM_Workshops/OFW7_2012_Darmstadt/Training/ZeljkoTukovic/ZeljkoTukovic-ImmersedBoundaryMaterial.tgz
 
-This repository merely aims to make it easier to download and create forks of this source code.
+This repository merely aims to make it easier to download and create forks of this source code. In addition, this [git repository](https://github.com/wyldckat/scripts4OpenFOAM3rdParty/) was brought to you by Bruno Santos (wyldckat@github working at [blueCAPE Lda](http://www.bluecape.com.pt)).
 
 Installation instructions available at openfoamwiki.net: http://openfoamwiki.net/index.php/Extend-bazaar/Toolkits/ImmersedBoundary
 
